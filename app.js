@@ -8,34 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Menu Drawer Toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
-  
+  const mobileNavClose = document.querySelector('.mobile-nav-close');
+
   if (menuToggle && mobileNavOverlay) {
     menuToggle.addEventListener('click', () => {
-      mobileNavOverlay.classList.toggle('open');
-      menuToggle.innerHTML = mobileNavOverlay.classList.contains('open') ? '✕' : '☰';
+      mobileNavOverlay.classList.add('open');
     });
+
+    if (mobileNavClose) {
+      mobileNavClose.addEventListener('click', () => {
+        mobileNavOverlay.classList.remove('open');
+      });
+    }
 
     mobileNavOverlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileNavOverlay.classList.remove('open');
-        menuToggle.innerHTML = '☰';
       });
     });
   }
 
-  // 2. Sticky Header Glassmorphism on Scroll
-  const header = document.querySelector('.header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  }
-
-  // 3. Theme Switcher (Dark / Light Mode)
+  // 2. Theme Switcher (Dark / Light Mode)
   const savedTheme = localStorage.getItem('mazury-theme');
   const themeBtn = document.querySelector('.theme-btn');
   
@@ -55,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Multi-Language Switcher
+  // 3. Multi-Language Switcher
   const savedLang = localStorage.getItem('mazury-lang') || 'pl';
   if (typeof applyTranslations === 'function') {
     applyTranslations(savedLang);
@@ -67,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Hero Background Carousel Slider
+  // 4. Hero Background Carousel Slider
   const heroSlides = document.querySelectorAll('.hero-slide');
   if (heroSlides.length > 1) {
     let currentIdx = 0;
@@ -78,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4500);
   }
 
-  // 6. Interactive Price & Stay Calculator
+  // 5. Interactive Price & Stay Calculator
   const calcNights = document.getElementById('calc-nights-input');
   const calcGuests = document.getElementById('calc-guests-input');
   const calcSpa = document.getElementById('calc-spa-checkbox');
@@ -90,10 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const guests = parseInt(calcGuests ? calcGuests.value : 4) || 4;
       const isSpa = calcSpa ? calcSpa.checked : false;
 
-      // Price rules: 500 PLN per night for cottage, SPA +150 PLN per night
       let cottageRate = 500;
       if (guests > 4) {
-        cottageRate = 900; // 2 domki for larger groups
+        cottageRate = 900;
       }
       
       const spaRate = isSpa ? 150 : 0;
@@ -112,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCalculator();
   }
 
-  // 7. Booking Form Inquiry Submission
+  // 6. Booking Form Inquiry Submission
   const bookingForm = document.getElementById('booking-form');
   const toast = document.getElementById('toast-notification');
 
@@ -127,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Gallery Lightbox Modal
+  // 7. Gallery Lightbox Modal
   const lightbox = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.getElementById('lightbox-close');
@@ -135,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightbox && lightboxImg) {
     document.querySelectorAll('.gallery-masonry-item img, .lightbox-trigger').forEach(img => {
       img.addEventListener('click', () => {
-        // Swap thumb path to full webp path if present
         let fullSrc = img.src.replace('_thumb.webp', '.webp');
         lightboxImg.src = fullSrc;
         lightbox.classList.add('active');
@@ -161,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Live Weather for Bogaczewo (Giżycko)
+  // 8. Live Weather for Bogaczewo (Giżycko)
   const tempEl = document.getElementById('weather-temp');
   const iconEl = document.getElementById('weather-icon');
   
