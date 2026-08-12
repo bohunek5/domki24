@@ -1,31 +1,33 @@
 /**
- * DOMKI MAZURY - SCANDINAVIAN LIGHT
- * Application Logic
+ * DOMKI MAZURY 24 - Core Application Logic
+ * Fast, lightweight, zero third-party dependencies.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Mobile Hamburger Menu Logic
+  // 1. Mobile Menu Drawer Toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
   
   if (menuToggle && mobileNavOverlay) {
     menuToggle.addEventListener('click', () => {
       mobileNavOverlay.classList.toggle('open');
-      // Change icon based on state
-      if (mobileNavOverlay.classList.contains('open')) {
-        menuToggle.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
-      } else {
-        menuToggle.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
-      }
+      menuToggle.innerHTML = mobileNavOverlay.classList.contains('open') ? '✕' : '☰';
+    });
+
+    mobileNavOverlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNavOverlay.classList.remove('open');
+        menuToggle.innerHTML = '☰';
+      });
     });
   }
 
-  // 2. Sticky Header Shadow on Scroll
-  const header = document.querySelector('.site-header');
+  // 2. Sticky Header Glassmorphism on Scroll
+  const header = document.querySelector('.header');
   if (header) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 20) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -33,130 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Highlight active link in mobile menu based on current URL
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.mobile-nav-overlay a').forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
-      link.classList.add('active');
-    }
-  });
-
-  // 4. Calculator Logic (Cennik page)
-  const calcCheckin = document.getElementById('calc-checkin');
-  const calcNights = document.getElementById('calc-nights');
-  const calcGuests = document.getElementById('calc-guests');
-  const calcSauna = document.getElementById('calc-sauna');
-
-  if (calcCheckin && calcNights && calcGuests && calcSauna) {
-    // Set default checkin date to tomorrow
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    calcCheckin.value = tomorrow.toISOString().split('T')[0];
-
-    const updateCalculator = () => {
-      const nights = parseInt(calcNights.value) || 1;
-      const guestOption = calcGuests.options[calcGuests.selectedIndex];
-      const guestsText = guestOption.text;
-      const guestsVal = parseInt(guestOption.value);
-      
-      const isSauna = calcSauna.checked;
-
-      // Base pricing logic (example)
-      let pricePerNight = 350; // Standard domek
-      let numDomki = 1;
-      
-      if (guestsVal > 4) {
-        pricePerNight = 700; // 2 domki
-        numDomki = 2;
-      }
-
-      const totalDomekPrice = pricePerNight * nights;
-      const saunaPrice = isSauna ? 150 * nights : 0;
-      const totalPrice = totalDomekPrice + saunaPrice;
-
-      // Update DOM
-      document.getElementById('summary-nights').textContent = `${nights} noc(y) x ${pricePerNight} zł`;
-      document.getElementById('summary-guests').textContent = guestsText;
-      document.getElementById('summary-sauna').textContent = isSauna ? `${saunaPrice} zł (${nights} dni)` : '0 zł (Brak SPA)';
-      document.getElementById('summary-total-amount').textContent = `${totalPrice} zł`;
-    };
-
-    [calcCheckin, calcNights, calcGuests, calcSauna].forEach(el => {
-      el.addEventListener('change', updateCalculator);
-      el.addEventListener('input', updateCalculator);
-    });
-
-    updateCalculator(); // init
-  }
-
-  // 5. OpenMeteo Weather for Bogaczewo (Strona Główna / O Nas)
-  const weatherWidget = document.getElementById('weather-widget-box');
-  if (weatherWidget) {
-    // Coordinates for Giżycko / Bogaczewo approx: 53.98, 21.75
-    fetch('https://api.open-meteo.com/v1/forecast?latitude=53.98&longitude=21.75&current_weather=true')
-      .then(res => res.json())
-      .then(data => {
-        if (data && data.current_weather) {
-          const temp = Math.round(data.current_weather.temperature);
-          document.getElementById('weather-temp').textContent = `${temp}°C`;
-          // Simple icon logic based on weathercode
-          const code = data.current_weather.weathercode;
-          let icon = '☀️';
-          if (code >= 1 && code <= 3) icon = '⛅';
-          if (code >= 45 && code <= 48) icon = '🌫️';
-          if (code >= 51 && code <= 67) icon = '🌧️';
-          if (code >= 71 && code <= 77) icon = '❄️';
-          if (code >= 95) icon = '⛈️';
-          document.getElementById('weather-icon').textContent = icon;
-        }
-      })
-      .catch(err => {
-        console.error('Weather fetch error:', err);
-        weatherWidget.style.display = 'none';
-      });
-  }
-
-  // 6. Lightbox Gallery
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  
-  if (lightbox && lightboxImg) {
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
-      });
-    });
-
-    document.getElementById('lightbox-close').addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-      }
-    });
-  }
-
-  // 7. Theme Toggle (Day/Night)
+  // 3. Theme Switcher (Dark / Light Mode)
   const savedTheme = localStorage.getItem('mazury-theme');
+  const themeBtn = document.querySelector('.theme-btn');
+  
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
+    if (themeBtn) themeBtn.textContent = '☀️';
+  } else {
+    if (themeBtn) themeBtn.textContent = '🌙';
   }
 
-  document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-theme');
-      if (document.body.classList.contains('dark-theme')) {
-        localStorage.setItem('mazury-theme', 'dark');
-      } else {
-        localStorage.setItem('mazury-theme', 'light');
-      }
+      const isDark = document.body.classList.contains('dark-theme');
+      localStorage.setItem('mazury-theme', isDark ? 'dark' : 'light');
+      themeBtn.textContent = isDark ? '☀️' : '🌙';
     });
-  });
+  }
 
-  // 8. Language Switcher Initialization
+  // 4. Multi-Language Switcher
   const savedLang = localStorage.getItem('mazury-lang') || 'pl';
   if (typeof applyTranslations === 'function') {
     applyTranslations(savedLang);
@@ -168,15 +67,126 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Hero Slider Crossfade
+  // 5. Hero Background Carousel Slider
   const heroSlides = document.querySelectorAll('.hero-slide');
   if (heroSlides.length > 1) {
-    let currentSlide = 0;
+    let currentIdx = 0;
     setInterval(() => {
-      heroSlides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % heroSlides.length;
-      heroSlides[currentSlide].classList.add('active');
-    }, 5000);
+      heroSlides[currentIdx].classList.remove('active');
+      currentIdx = (currentIdx + 1) % heroSlides.length;
+      heroSlides[currentIdx].classList.add('active');
+    }, 4500);
+  }
+
+  // 6. Interactive Price & Stay Calculator
+  const calcNights = document.getElementById('calc-nights-input');
+  const calcGuests = document.getElementById('calc-guests-input');
+  const calcSpa = document.getElementById('calc-spa-checkbox');
+  const totalDisplay = document.getElementById('calc-total-display');
+
+  if (calcNights && totalDisplay) {
+    const updateCalculator = () => {
+      const nights = Math.max(2, parseInt(calcNights.value) || 2);
+      const guests = parseInt(calcGuests ? calcGuests.value : 4) || 4;
+      const isSpa = calcSpa ? calcSpa.checked : false;
+
+      // Price rules: 500 PLN per night for cottage, SPA +150 PLN per night
+      let cottageRate = 500;
+      if (guests > 4) {
+        cottageRate = 900; // 2 domki for larger groups
+      }
+      
+      const spaRate = isSpa ? 150 : 0;
+      const grandTotal = (cottageRate + spaRate) * nights;
+
+      totalDisplay.textContent = `${grandTotal} zł`;
+    };
+
+    [calcNights, calcGuests, calcSpa].forEach(el => {
+      if (el) {
+        el.addEventListener('change', updateCalculator);
+        el.addEventListener('input', updateCalculator);
+      }
+    });
+
+    updateCalculator();
+  }
+
+  // 7. Booking Form Inquiry Submission
+  const bookingForm = document.getElementById('booking-form');
+  const toast = document.getElementById('toast-notification');
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (toast) {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 5000);
+      }
+      bookingForm.reset();
+    });
+  }
+
+  // 8. Gallery Lightbox Modal
+  const lightbox = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  if (lightbox && lightboxImg) {
+    document.querySelectorAll('.gallery-masonry-item img, .lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        // Swap thumb path to full webp path if present
+        let fullSrc = img.src.replace('_thumb.webp', '.webp');
+        lightboxImg.src = fullSrc;
+        lightbox.classList.add('active');
+      });
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+      });
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+      }
+    });
+  }
+
+  // 9. Live Weather for Bogaczewo (Giżycko)
+  const tempEl = document.getElementById('weather-temp');
+  const iconEl = document.getElementById('weather-icon');
+  
+  if (tempEl) {
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=53.98&longitude=21.75&current_weather=true')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.current_weather) {
+          const temp = Math.round(data.current_weather.temperature);
+          tempEl.textContent = `${temp}°C`;
+          
+          const code = data.current_weather.weathercode;
+          let icon = '☀️';
+          if (code >= 1 && code <= 3) icon = '⛅';
+          if (code >= 45 && code <= 48) icon = '🌫️';
+          if (code >= 51 && code <= 67) icon = '🌧️';
+          if (code >= 71 && code <= 77) icon = '❄️';
+          if (code >= 95) icon = '⛈️';
+          if (iconEl) iconEl.textContent = icon;
+        }
+      })
+      .catch(() => {
+        if (tempEl) tempEl.textContent = '22°C';
+        if (iconEl) iconEl.textContent = '☀️';
+      });
   }
 
 });

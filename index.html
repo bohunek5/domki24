@@ -3,194 +3,440 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domki Mazury Bogaczewo k. Giżycka | Luksusowe Domki Nad Jeziorem Bocznym</title>
-  <meta name="description" content="Wynajem domków na Mazurach w Bogaczewie. Blisko plaży, na szlaku Green Velo. Sauna fińska, balia ogrodowa. Zarezerwuj swój pobyt z dala od zgiełku.">
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Domki Mazury Bogaczewo k. Giżycka | Luksusowe Domki & Strefa SPA</title>
+  <meta name="description" content="Wynajem luksusowych domków na Mazurach w Bogaczewie k. Giżycka. Balia ogrodowa, sauna fińska, klimatyzacja, blisko plaży i szlaku Green Velo. Zarezerwuj online!">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
 <body>
 
-  <!-- Standard Sticky Header -->
-  <header class="site-header">
-    <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo">
-        <img loading="lazy" src="assets/logo.png" alt="Domki Mazury Logo" style="filter: invert(1);">
-        <div class="brand-title">Domki <span style="color: var(--primary-color);">Mazury</span></div>
+  <!-- Sticky Glassmorphism Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="brand">
+        <img src="assets/logo.png" alt="Domki Mazury Logo" class="brand-logo" style="filter: invert(1);">
+        <div>Domki <span class="gradient-text">Mazury 24</span></div>
       </a>
 
-      <!-- PC Nav -->
-      <ul class="pc-nav">
-        <li><a href="index.html" class="active" data-i18n="nav-home">Strona Główna</a></li>
-        <li><a href="domki.html" data-i18n="nav-cottages">Domki</a></li>
-        <li><a href="sauna-balia.html" data-i18n="nav-spa">Sauna & Balia</a></li>
-        <li><a href="o-nas.html" data-i18n="nav-about">O Nas</a></li>
-        <li><a href="galeria.html" data-i18n="nav-gallery">Galeria</a></li>
-        <li><a href="atrakcje.html" data-i18n="nav-attractions">Atrakcje</a></li>
-        <li><a href="cennik.html" data-i18n="nav-prices">Cennik</a></li>
-        <li><a href="kontakt.html" data-i18n="nav-contact">Kontakt</a></li>
+      <!-- Desktop Nav -->
+      <ul class="nav-desktop">
+        <li><a href="#home" class="nav-link active" data-i18n="nav-home">Strona Główna</a></li>
+        <li><a href="#domki" class="nav-link" data-i18n="nav-cottages">Domki</a></li>
+        <li><a href="#spa" class="nav-link" data-i18n="nav-spa">Sauna & Balia</a></li>
+        <li><a href="#cennik" class="nav-link" data-i18n="nav-prices">Cennik</a></li>
+        <li><a href="#galeria" class="nav-link" data-i18n="nav-gallery">Galeria</a></li>
+        <li><a href="#atrakcje" class="nav-link" data-i18n="nav-attractions">Atrakcje</a></li>
+        <li><a href="#kontakt" class="nav-link" data-i18n="nav-contact">Kontakt</a></li>
       </ul>
 
-      <div class="header-right">
-        <!-- Tools (Flags & Theme) -->
-        <div class="tools-group pc-only">
-          <div class="lang-switcher">
-            <button class="lang-btn active" data-lang="pl" aria-label="Polski">🇵🇱</button>
-            <button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
-            <button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
-          </div>
-          <button class="theme-toggle-btn" aria-label="Przełącz motyw">
-            <span class="moon-icon">🌙</span>
-            <span class="sun-icon">☀️</span>
-          </button>
+      <div class="header-actions">
+        <!-- Multi-language & Theme -->
+        <div class="lang-switch pc-only">
+          <button class="lang-btn active" data-lang="pl">🇵🇱</button>
+          <button class="lang-btn" data-lang="en">🇬🇧</button>
+          <button class="lang-btn" data-lang="de">🇩🇪</button>
         </div>
         
-        <a href="cennik.html" class="btn btn-primary ombre pc-only" data-i18n="btn-book">Zarezerwuj</a>
-        <!-- Hamburger Menu Button -->
-        <button class="menu-toggle" aria-label="Toggle Menu">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+        <button class="theme-btn" aria-label="Przełącz motyw">🌙</button>
+        
+        <a href="#cennik" class="btn btn-primary pc-only" data-i18n="btn-book">Rezerwuj Pobyt</a>
+
+        <button class="menu-toggle" aria-label="Menu Mobile">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Nav Overlay -->
+  <!-- Mobile Drawer Menu -->
   <nav class="mobile-nav-overlay">
-    <ul>
-      <li><a href="index.html" class="active" data-i18n="nav-home">Strona Główna</a></li>
-      <li><a href="domki.html" data-i18n="nav-cottages">Nasze Domki</a></li>
-      <li><a href="sauna-balia.html" data-i18n="nav-spa">Sauna & Balia</a></li>
-      <li><a href="o-nas.html" data-i18n="nav-about">O Nas</a></li>
-      <li><a href="galeria.html" data-i18n="nav-gallery">Galeria</a></li>
-      <li><a href="atrakcje.html" data-i18n="nav-attractions">Atrakcje</a></li>
-      <li><a href="cennik.html" data-i18n="nav-prices">Cennik</a></li>
-      <li><a href="kontakt.html" data-i18n="nav-contact">Kontakt</a></li>
+    <ul class="mobile-nav-links">
+      <li><a href="#home" data-i18n="nav-home">Strona Główna</a></li>
+      <li><a href="#domki" data-i18n="nav-cottages">Nasze Domki</a></li>
+      <li><a href="#spa" data-i18n="nav-spa">Sauna & Balia</a></li>
+      <li><a href="#cennik" data-i18n="nav-prices">Cennik & Rezerwacja</a></li>
+      <li><a href="#galeria" data-i18n="nav-gallery">Galeria Zdjęć</a></li>
+      <li><a href="#atrakcje" data-i18n="nav-attractions">Atrakcje Mazury</a></li>
+      <li><a href="#kontakt" data-i18n="nav-contact">Kontakt</a></li>
     </ul>
-    
-    <div class="mobile-tools-group">
-      <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="pl" aria-label="Polski">🇵🇱</button>
-        <button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
-        <button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+
+    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="pl">🇵🇱 PL</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
       </div>
-      <button class="theme-toggle-btn" aria-label="Przełącz motyw" style="border: 1px solid var(--border-color);">
-        <span class="moon-icon">🌙</span>
-        <span class="sun-icon">☀️</span>
-      </button>
     </div>
 
-    <div class="mobile-nav-bottom">
-      <a href="cennik.html" class="btn btn-primary ombre text-center" data-i18n="btn-prices">Sprawdź Ceny</a>
-      <a href="tel:500294296" class="btn btn-outline text-center">📞 500 294 296</a>
+    <div style="margin-top: auto; padding-top: 2rem;">
+      <a href="tel:500294296" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">📞 500 294 296</a>
     </div>
   </nav>
 
-  <!-- Hero Section with Slider -->
-  <section class="hero">
-    <div class="hero-slider-bg">
-      <img src="assets/photos_webp/cottage_hero.webp" alt="Widok 1" class="hero-slide active">
-      <img loading="lazy" src="assets/photos_webp/sauna_balia_3.webp" alt="Widok 2" class="hero-slide">
-      <img loading="lazy" src="assets/photos_webp/outdoor_sunset_2.webp" alt="Widok 3" class="hero-slide">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg-carousel">
+      <img src="assets/photos_webp/cottage_hero.webp" alt="Domki Mazury" class="hero-slide active">
+      <img src="assets/photos_webp/sauna_balia_3.webp" alt="Sauna Balia" class="hero-slide">
+      <img src="assets/photos_webp/outdoor_sunset_2.webp" alt="Zachód Słońca" class="hero-slide">
     </div>
-    
     <div class="hero-overlay"></div>
-    <div class="container hero-content text-center" style="margin: 0 auto;" data-aos="zoom-in" data-aos-duration="1000">
-      <div class="badge badge-primary" data-aos="fade-down" data-aos-delay="200" data-i18n="hero-badge">Bogaczewo k. Giżycka</div>
-      <h1 data-aos="fade-up" data-aos-delay="300" data-i18n="hero-title">Miejsce Stworzone do Odpoczynku</h1>
-      <p style="margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400" data-i18n="hero-desc">Nowoczesne domki, balia z podgrzewaną wodą, sauna fińska i otulina mazurskiej natury. Zaledwie 1000m od plaży na Szlaku Wielkich Jezior.</p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" data-aos="fade-up" data-aos-delay="500">
-        <a href="domki.html" class="btn btn-primary ombre" data-i18n="hero-btn-domki">Zobacz Domki</a>
-        <a href="sauna-balia.html" class="btn btn-outline" style="background: var(--bg-main);" data-i18n="hero-btn-spa">Strefa SPA</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Quick Info -->
-  <section class="section-padding bg-main">
-    <div class="container text-center">
-      <h2 data-aos="fade-up">Co nas wyróżnia?</h2>
-      <p style="max-width: 600px; margin: 0 auto 3rem;" data-aos="fade-up" data-aos-delay="100">Zaprojektowaliśmy nasze domki z myślą o maksymalnym komforcie, przestrzeni i prywatności, gwarantując spokój z dala od zatłoczonych kurortów.</p>
+    <div class="container hero-content">
+      <div class="badge badge-gold" data-i18n="hero-badge">Bogaczewo k. Giżycka • Szlak Wielkich Jezior</div>
       
-      <div class="card-grid">
-        <div class="std-card ombre-card std-card-body text-center" data-aos="fade-up" data-aos-delay="200">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">🌲</div>
-          <h3 style="color: var(--primary-color);">Cisza i Natura</h3>
-          <p style="font-size: 1rem;">Obiekt położony 1km od centrum wsi, w bliskości lasu i szlaku rowerowego Green Velo.</p>
-        </div>
-        <div class="std-card ombre-card std-card-body text-center" data-aos="fade-up" data-aos-delay="300">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">🔥</div>
-          <h3 style="color: var(--primary-color);">Prywatne SPA</h3>
-          <p style="font-size: 1rem;">Własna sauna fińska opalana drewnem oraz ruska balia ogrodowa do wyłącznej dyspozycji gości.</p>
-        </div>
-        <div class="std-card ombre-card std-card-body text-center" data-aos="fade-up" data-aos-delay="400">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">⛵</div>
-          <h3 style="color: var(--primary-color);">Blisko Jeziora</h3>
-          <p style="font-size: 1rem;">Tylko 1000m do nowej, publicznej plaży przy jeziorze Bocznym (Szlak Wielkich Jezior Mazurskich).</p>
-        </div>
+      <h1 class="hero-title font-serif">Miejsce Stworzone do <span class="gradient-text-gold">Prawdziwego Odpoczynku</span></h1>
+      
+      <p class="hero-subtitle" data-i18n="hero-subtitle">
+        Nowoczesne, klimatyzowane domki z prywatną sauną fińską i ogrzewaną balią ogrodową z hydromasażem. Zaledwie 1000m od plaży nad jeziorem Bocznym.
+      </p>
+
+      <div class="hero-features">
+        <div class="hero-feature-item">🌲 Otulina Lasu</div>
+        <div class="hero-feature-item">🔥 Sauna & Balia</div>
+        <div class="hero-feature-item">❄️ Klimatyzacja</div>
+        <div class="hero-feature-item">📡 Starlink Wi-Fi</div>
+        <div class="hero-feature-item">🚲 Green Velo</div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#cennik" class="btn btn-gold" data-i18n="hero-btn-calc">Oblicz Koszt Pobytu</a>
+        <a href="#spa" class="btn btn-secondary" data-i18n="hero-btn-spa">Odkryj Strefę SPA</a>
       </div>
     </div>
   </section>
 
-  <!-- Showcase -->
-  <section class="section-padding bg-alt" style="overflow: hidden;">
+  <!-- Live Weather Bar & At-a-Glance Highlights -->
+  <section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
     <div class="container">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
-        <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
-          <h2>Domek Sosnowy i Świerkowy</h2>
-          <p>Oferujemy dwa niezależne, nowocześnie urządzone domki. Każdy z nich pomieści wygodnie 4 osoby, zapewniając intymność i wysoki standard wypoczynku.</p>
-          <ul class="features-list">
-            <li>Klimatyzacja</li>
-            <li>W pełni wyposażona kuchnia</li>
-            <li>Szybkie Wi-Fi (Starlink)</li>
-            <li>Grill gazowy na tarasie</li>
-          </ul>
-          <a href="domki.html" class="btn btn-primary ombre" style="margin-top: 1rem;">Poznaj szczegóły domków</a>
+      <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <div id="weather-icon" style="font-size: 3rem;">☀️</div>
+          <div>
+            <div style="font-size: 0.9rem; color: var(--text-muted);">Pogoda dzisiaj w Bogaczewie:</div>
+            <div id="weather-temp" style="font-size: 2rem; font-weight: 800; color: var(--primary);">22°C</div>
+          </div>
         </div>
-        <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
-          <img loading="lazy" src="assets/photos_webp/cottage_ext_1.webp" alt="Dwa domki" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+          <div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">1000m</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Plaża i Jezioro Boczne</div>
+          </div>
+          <div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-gold);">2 Domki</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Sosnowy i Świerkowy</div>
+          </div>
+          <div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">100%</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Prywatność i Komfort</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Weather & Footer Contact -->
-  <section class="section-padding bg-main">
-    <div class="container text-center" data-aos="zoom-in">
-      <h2>Aktualnie w Bogaczewie</h2>
-      <div id="weather-widget-box" class="weather-widget" style="justify-content: center; max-width: 400px; margin: 2rem auto;">
-        <div id="weather-icon" class="weather-icon">...</div>
-        <div id="weather-temp" class="weather-temp">--°C</div>
-      </div>
-      <p style="margin-bottom: 2rem;">Zarezerwuj swój pobyt i sprawdź dostępność bezpośrednio u nas.</p>
-      <a href="tel:500294296" class="btn btn-primary ombre" style="font-size: 1.25rem; padding: 1rem 2rem;">📞 500 294 296</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
+  <!-- Highlights Section -->
+  <section class="section">
     <div class="container">
-      <div class="footer-grid">
-        <div data-aos="fade-up">
-          <h4 style="color: var(--text-main); margin-bottom: 1rem;">Domki Mazury</h4>
-          <p style="color: var(--text-muted);">Bogaczewo k. Giżycka<br>Telefon: <a href="tel:500294296" style="color: var(--primary-color);">500 294 296</a><br>Email: domkimazury@interia.pl</p>
+      <div class="section-header">
+        <div class="badge badge-primary">Dlaczego My?</div>
+        <h2>Co Wyróżnia Domki Mazury 24?</h2>
+        <p>Gwarantujemy najwyższą jakość wypoczynku w sercu Mazur z dbałością o każdy detal.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🌲</div>
+          <h3 data-i18n="spec-nature">Cisza i Spokój</h3>
+          <p data-i18n="spec-nature-desc">Obiekt położony 1km od centrum wsi, w sąsiedztwie otuliny leśnej i szlaku rowerowego Green Velo.</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100">
-          <h4>Nawigacja</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" data-i18n="nav-home">Strona Główna</a></li>
-            <li><a href="domki.html" data-i18n="nav-cottages">Domki</a></li>
-            <li><a href="sauna-balia.html" data-i18n="nav-spa">Sauna & Balia</a></li>
-            <li><a href="cennik.html" data-i18n="nav-prices">Cennik</a></li>
-          </ul>
+
+        <div class="card">
+          <div class="card-icon">🔥</div>
+          <h3 data-i18n="spec-spa">Prywatne SPA</h3>
+          <p data-i18n="spec-spa-desc">Balia ogrodowa z podgrzewaną wodą i sauna fińska opalana drewnem na wyłączność naszych gości.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⛵</div>
+          <h3 data-i18n="spec-lake">1000m do Jeziora</h3>
+          <p data-i18n="spec-lake-desc">Zaledwie kilometr do nowoczesnej plaży publicznej z pomostem i wypożyczalnią sprzętu nad jeziorem Bocznym.</p>
         </div>
       </div>
-      <div class="footer-copy">© 2026 Domki Mazury (domkimazury-24.pl). Wszelkie prawa zastrzeżone.</div>
     </div>
-  </footer>
+  </section>
 
-  <!-- JS -->
+  <!-- Cottages Showcase Section -->
+  <section id="domki" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-gold">Komfort i Styl</div>
+        <h2>Nasze Domki – Sosnowy i Świerkowy</h2>
+        <p>W pełni całoroczne, niezależne obiekty stworzone dla 4 osób każdy, z bogatym wyposażeniem.</p>
+      </div>
+
+      <div class="cottage-card">
+        <div class="cottage-gallery">
+          <img src="assets/photos_webp/cottage_ext_1.webp" alt="Domek Z zewnątrz" class="cottage-img-main lightbox-trigger">
+        </div>
+        <div class="cottage-content">
+          <h3>Domek Sosnowy (Dla 4 Osoby)</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">
+            Przestronny salon z kanapą, 2 osobne sypialnie na piętrze, nowoczesny aneks kuchenny oraz prywatny, zadaszony taras z grillem gazowym.
+          </p>
+
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Klimatyzacja z funkcją grzania</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Wi-Fi Starlink (Szybki Internet)</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Zmywarka & Płyta Indukcyjna</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Zadaszony taras + Grill</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Smart TV z Netflix</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Bezpłatny parking na posesji</div>
+          </div>
+
+          <a href="#cennik" class="btn btn-primary">Zarezerwuj Domek Sosnowy</a>
+        </div>
+      </div>
+
+      <div class="cottage-card">
+        <div class="cottage-content">
+          <h3>Domek Świerkowy (Dla 4 Osoby)</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">
+            Wykończony w jasnym, skandynawskim stylu z widokiem na ogród. Idealny na rodzinny wypoczynek lub romantyczny wyjazd we dwoje.
+          </p>
+
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Klimatyzacja w całym obiekcie</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Nowoczesna łazienka z prysznicem</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> W pełni zaopatrzona kuchnia</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Meble ogrodowe & Leżaki</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Pościel & Ręczniki w cenie</div>
+            <div class="amenity-item"><span class="amenity-icon">✓</span> Teren ogrodzony i bezpieczny</div>
+          </div>
+
+          <a href="#cennik" class="btn btn-primary">Zarezerwuj Domek Świerkowy</a>
+        </div>
+        <div class="cottage-gallery">
+          <img src="assets/photos_webp/cottage_ext_2.webp" alt="Domek Świerkowy" class="cottage-img-main lightbox-trigger">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPA & Relaxation Section -->
+  <section id="spa" class="section spa-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-primary">Odnowa Biologiczna</div>
+        <h2 data-i18n="spa-title">Strefa SPA – Sauna & Gorąca Balia</h2>
+        <p data-i18n="spa-desc">Rozgrzej ciało w saunie fińskiej i zrelaksuj się w podgrzewanej balii ogrodowej z hydromasażem pod gwiazdami.</p>
+      </div>
+
+      <div class="spa-grid">
+        <div class="spa-card">
+          <img src="assets/photos_webp/sauna_balia_1.webp" alt="Sauna Fińska" class="spa-img lightbox-trigger" loading="lazy">
+          <div class="spa-body">
+            <h3>Sauna Fińska Opalana Drewnem</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
+              Tradycyjna sauna z drewna świerkowego. Doskonała na regenerację po całodniowych wycieczkach rowerowych lub żeglowaniu.
+            </p>
+          </div>
+        </div>
+
+        <div class="spa-card">
+          <img src="assets/photos_webp/sauna_balia_4.webp" alt="Balia Ogrodowa" class="spa-img lightbox-trigger" loading="lazy">
+          <div class="spa-body">
+            <h3>Balia Ogrodowa z Hydromasażem</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
+              Podgrzewana balia ogrodowa (jacuzzi) z systemem napowietrzania i klimatycznym podświetleniem LED Nocą.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator & Booking Section -->
+  <section id="cennik" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-gold">Przejrzysty Cennik</div>
+        <h2 data-i18n="calc-title">Kalkulator Ceny & Rezerwacja</h2>
+        <p data-i18n="calc-desc">Wybierz liczbę nocy oraz opcje dodatkowe, aby natychmiast wyliczyć całkowity koszt pobytu.</p>
+      </div>
+
+      <div class="booking-grid">
+        <div class="card">
+          <h3 style="margin-bottom: 1.5rem;">Wycena Pobytu</h3>
+
+          <form id="booking-form">
+            <div class="form-group">
+              <label class="form-label" for="calc-nights-input" data-i18n="calc-nights">Liczba nocy (min. 2):</label>
+              <input type="number" id="calc-nights-input" class="form-input" min="2" value="2" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="calc-guests-input" data-i18n="calc-guests">Liczba osób:</label>
+              <select id="calc-guests-input" class="form-select">
+                <option value="2">1-4 Osoby (1 Domek)</option>
+                <option value="8">5-8 Osób (2 Domki)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem;">
+              <input type="checkbox" id="calc-spa-checkbox" style="width: 22px; height: 22px; cursor: pointer;">
+              <label for="calc-spa-checkbox" style="cursor: pointer; font-weight: 500;" data-i18n="calc-spa-opt">Dodaj Strefę SPA (Sauna + Balia: +150 zł/doba)</label>
+            </div>
+
+            <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+              <h4 style="margin-bottom: 1rem;">Twoje Dane do Rezerwacji:</h4>
+              <div class="form-group">
+                <input type="text" placeholder="Imię i Nazwisko" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Numer Telefonu" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Adres E-mail" class="form-input" required>
+              </div>
+              <button type="submit" class="btn btn-gold" style="width: 100%;" data-i18n="calc-send">Wyślij Zapytanie o Rezerwację</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="calc-summary">
+          <div>
+            <div class="badge badge-primary" style="margin-bottom: 1rem;">Podsumowanie</div>
+            <h3>Szczegóły Opłat</h3>
+
+            <div class="summary-row">
+              <span>Cena podstawowa (Domek za dobę):</span>
+              <strong style="color: var(--text-primary);">500 zł</strong>
+            </div>
+            <div class="summary-row">
+              <span>Minimalny czas najmu:</span>
+              <strong style="color: var(--text-primary);">2 doby</strong>
+            </div>
+            <div class="summary-row">
+              <span>Doba hotelowa:</span>
+              <strong style="color: var(--text-primary);">15:00 - 11:00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Brak opłat za sprzątanie:</span>
+              <strong style="color: var(--accent);">W cenie</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--primary);">
+            <div style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="calc-total">Łączny Koszt:</div>
+            <div id="calc-total-display" class="summary-total">1000 zł</div>
+            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">*Cena gwarantuje wyłączność na obiekt bez ukrytych kosztów.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox Grid Section -->
+  <section id="galeria" class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-primary">Fotogaleria</div>
+        <h2>Galeria Obiektu</h2>
+        <p>Zobacz nasze domki, wykończenie wnętrz oraz strefę relaksu.</p>
+      </div>
+
+      <div class="gallery-masonry">
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/cottage_ext_1_thumb.webp" alt="Ogród" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/interior_living_1_thumb.webp" alt="Salon" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/sauna_balia_2_thumb.webp" alt="Sauna" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/interior_kitchen_1_thumb.webp" alt="Kuchnia" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/outdoor_sunset_1_thumb.webp" alt="Zachód" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/interior_bedroom_1_thumb.webp" alt="Sypialnia" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/sauna_balia_3_thumb.webp" alt="Balia" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/cottage_ext_3_thumb.webp" alt="Elewacja" loading="lazy"></div>
+        <div class="gallery-masonry-item"><img src="assets/photos_webp/interior_bath_1_thumb.webp" alt="Łazienka" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Attractions Section -->
+  <section id="atrakcje" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-gold">Okolica i Przyroda</div>
+        <h2>Atrakcje w Bogaczewie i Giżycku</h2>
+        <p>Bogaczewo to idealna baza wypadowa do zwiedzania Wielkich Jezior Mazurskich.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">⛵</div>
+          <h3>Plaża w Bogaczewie</h3>
+          <p>Tylko 1000m od domków z pomostem, piaszczystym wejściem do wody i wypożyczalnią sprzętu wodnego.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🚲</div>
+          <h3>Szlak Green Velo</h3>
+          <p>Mijający naszą miejscowość kultowy szlak rowerowy wokół Mazur. Oferujemy bezpieczne miejsce na przechowywanie rowerów.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏰</div>
+          <h3>Giżycko i Twierdza Boyen</h3>
+          <p>Zaledwie 8 km do stolicy żeglarstwa – most obrotowy, kanał łuczański, zamek i imprezy plenerowe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer Section -->
+  <section id="kontakt" class="section bg-alt">
+    <div class="container">
+      <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 1rem;">Bezpośredni Kontakt</div>
+          <h2>Skontaktuj się z Nami</h2>
+          <p style="margin-bottom: 2rem;">Chętnie odpowiemy na wszystkie pytania dotyczące dostępności i szczegółów przyjazdu.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 1.1rem;">
+            <div>📍 <strong>Lokalizacja:</strong> Bogaczewo k. Giżycka</div>
+            <div>📞 <strong>Telefon:</strong> <a href="tel:500294296" style="color: var(--primary); font-weight: 700;">500 294 296</a></div>
+            <div>✉️ <strong>E-mail:</strong> domkimazury@interia.pl</div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--primary-glow); padding: 2rem; border-radius: var(--radius-md);">
+          <h3>Masz Pytania? Zadzwoń Teraz!</h3>
+          <p style="margin: 1rem 0 2rem;">Odpowiadamy szybko i sprawnie na każde zapytanie telefoniczne.</p>
+          <a href="tel:500294296" class="btn btn-gold" style="font-size: 1.25rem;">📞 500 294 296</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 4rem; color: var(--text-light); font-size: 0.9rem;">
+        © 2026 Domki Mazury 24 (Bogaczewo k. Giżycka). Wszelkie prawa zastrzeżone.
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Fixed Quick Call Bar -->
+  <div class="mobile-cta-bar">
+    <a href="tel:500294296" class="btn btn-gold" style="flex: 1;">📞 Zadzwoń 500 294 296</a>
+    <a href="#cennik" class="btn btn-primary" style="flex: 1;">Rezerwuj</a>
+  </div>
+
+  <!-- Gallery Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <button id="lightbox-close" class="lightbox-close">✕</button>
+    <img id="lightbox-img" src="" alt="Powiększenie" class="lightbox-img">
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="toast" data-i18n="toast-success">
+    Dziękujemy! Zapytanie zostało wysłane. Skontaktujemy się z Tobą telefonicznie.
+  </div>
+
   <script src="translations.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
