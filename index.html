@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domki Mazury Bogaczewo k. Giżycka | Luksusowe Domki Nad Jeziorem Bocznym</title>
+  <meta name="description" content="Wynajem domków na Mazurach w Bogaczewie. Blisko plaży, na szlaku Green Velo. Sauna fińska, balia ogrodowa. Zarezerwuj swój pobyt z dala od zgiełku.">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Standard Sticky Header -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo.png" alt="Domki Mazury Logo" style="filter: invert(1);">
+        <div class="brand-title">Domki <span style="color: var(--primary-color);">Mazury</span></div>
+      </a>
+
+      <!-- PC Nav -->
+      <ul class="pc-nav">
+        <li><a href="index.html" class="active" data-i18n="nav-home">Strona Główna</a></li>
+        <li><a href="domki.html" data-i18n="nav-cottages">Domki</a></li>
+        <li><a href="sauna-balia.html" data-i18n="nav-spa">Sauna & Balia</a></li>
+        <li><a href="o-nas.html" data-i18n="nav-about">O Nas</a></li>
+        <li><a href="galeria.html" data-i18n="nav-gallery">Galeria</a></li>
+        <li><a href="atrakcje.html" data-i18n="nav-attractions">Atrakcje</a></li>
+        <li><a href="cennik.html" data-i18n="nav-prices">Cennik</a></li>
+        <li><a href="kontakt.html" data-i18n="nav-contact">Kontakt</a></li>
+      </ul>
+
+      <div class="header-right">
+        <!-- Tools (Flags & Theme) -->
+        <div class="tools-group pc-only">
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="pl" aria-label="Polski">🇵🇱</button>
+            <button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
+            <button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+          </div>
+          <button class="theme-toggle-btn" aria-label="Przełącz motyw">
+            <span class="moon-icon">🌙</span>
+            <span class="sun-icon">☀️</span>
+          </button>
+        </div>
+        
+        <a href="cennik.html" class="btn btn-primary ombre pc-only" data-i18n="btn-book">Zarezerwuj</a>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <nav class="mobile-nav-overlay">
+    <ul>
+      <li><a href="index.html" class="active" data-i18n="nav-home">Strona Główna</a></li>
+      <li><a href="domki.html" data-i18n="nav-cottages">Nasze Domki</a></li>
+      <li><a href="sauna-balia.html" data-i18n="nav-spa">Sauna & Balia</a></li>
+      <li><a href="o-nas.html" data-i18n="nav-about">O Nas</a></li>
+      <li><a href="galeria.html" data-i18n="nav-gallery">Galeria</a></li>
+      <li><a href="atrakcje.html" data-i18n="nav-attractions">Atrakcje</a></li>
+      <li><a href="cennik.html" data-i18n="nav-prices">Cennik</a></li>
+      <li><a href="kontakt.html" data-i18n="nav-contact">Kontakt</a></li>
+    </ul>
+    
+    <div class="mobile-tools-group">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="pl" aria-label="Polski">🇵🇱</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">🇬🇧</button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+      </div>
+      <button class="theme-toggle-btn" aria-label="Przełącz motyw" style="border: 1px solid var(--border-color);">
+        <span class="moon-icon">🌙</span>
+        <span class="sun-icon">☀️</span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-bottom">
+      <a href="cennik.html" class="btn btn-primary ombre text-center" data-i18n="btn-prices">Sprawdź Ceny</a>
+      <a href="tel:500294296" class="btn btn-outline text-center">📞 500 294 296</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Slider -->
+  <section class="hero">
+    <div class="hero-slider-bg">
+      <img src="assets/photos/cottage_hero.jpg" alt="Widok 1" class="hero-slide active">
+      <img src="assets/photos/sauna_balia_3.jpg" alt="Widok 2" class="hero-slide">
+      <img src="assets/photos/outdoor_sunset_2.jpg" alt="Widok 3" class="hero-slide">
+    </div>
+    
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center" style="margin: 0 auto;" data-aos="zoom-in" data-aos-duration="1000">
+      <div class="badge badge-primary" data-aos="fade-down" data-aos-delay="200" data-i18n="hero-badge">Bogaczewo k. Giżycka</div>
+      <h1 data-aos="fade-up" data-aos-delay="300" data-i18n="hero-title">Miejsce Stworzone do Odpoczynku</h1>
+      <p style="margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="400" data-i18n="hero-desc">Nowoczesne domki, balia z podgrzewaną wodą, sauna fińska i otulina mazurskiej natury. Zaledwie 1000m od plaży na Szlaku Wielkich Jezior.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" data-aos="fade-up" data-aos-delay="500">
+        <a href="domki.html" class="btn btn-primary ombre" data-i18n="hero-btn-domki">Zobacz Domki</a>
+        <a href="sauna-balia.html" class="btn btn-outline" style="background: var(--bg-main);" data-i18n="hero-btn-spa">Strefa SPA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Info -->
+  <section class="section-padding bg-main">
+    <div class="container text-center">
+      <h2 data-aos="fade-up">Co nas wyróżnia?</h2>
+      <p style="max-width: 600px; margin: 0 auto 3rem;" data-aos="fade-up" data-aos-delay="100">Zaprojektowaliśmy nasze domki z myślą o maksymalnym komforcie, przestrzeni i prywatności, gwarantując spokój z dala od zatłoczonych kurortów.</p>
+      
+      <div class="card-grid">
+        <div class="std-card ombre-card std-card-body text-center" data-aos="fade-up" data-aos-delay="200">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🌲</div>
+          <h3 style="color: var(--primary-color);">Cisza i Natura</h3>
+          <p style="font-size: 1rem;">Obiekt położony 1km od centrum wsi, w bliskości lasu i szlaku rowerowego Green Velo.</p>
+        </div>
+        <div class="std-card ombre-card std-card-body text-center" data-aos="fade-up" data-aos-delay="300">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🔥</div>
+          <h3 style="color: var(--primary-color);">Prywatne SPA</h3>
+          <p style="font-size: 1rem;">Własna sauna fińska opalana drewnem oraz ruska balia ogrodowa do wyłącznej dyspozycji gości.</p>
+        </div>
+        <div class="std-card ombre-card std-card-body text-center" data-aos="fade-up" data-aos-delay="400">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">⛵</div>
+          <h3 style="color: var(--primary-color);">Blisko Jeziora</h3>
+          <p style="font-size: 1rem;">Tylko 1000m do nowej, publicznej plaży przy jeziorze Bocznym (Szlak Wielkich Jezior Mazurskich).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="section-padding bg-alt" style="overflow: hidden;">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
+        <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
+          <h2>Domek Sosnowy i Świerkowy</h2>
+          <p>Oferujemy dwa niezależne, nowocześnie urządzone domki. Każdy z nich pomieści wygodnie 4 osoby, zapewniając intymność i wysoki standard wypoczynku.</p>
+          <ul class="features-list">
+            <li>Klimatyzacja</li>
+            <li>W pełni wyposażona kuchnia</li>
+            <li>Szybkie Wi-Fi (Starlink)</li>
+            <li>Grill gazowy na tarasie</li>
+          </ul>
+          <a href="domki.html" class="btn btn-primary ombre" style="margin-top: 1rem;">Poznaj szczegóły domków</a>
+        </div>
+        <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
+          <img src="assets/photos/cottage_ext_1.jpg" alt="Dwa domki" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather & Footer Contact -->
+  <section class="section-padding bg-main">
+    <div class="container text-center" data-aos="zoom-in">
+      <h2>Aktualnie w Bogaczewie</h2>
+      <div id="weather-widget-box" class="weather-widget" style="justify-content: center; max-width: 400px; margin: 2rem auto;">
+        <div id="weather-icon" class="weather-icon">...</div>
+        <div id="weather-temp" class="weather-temp">--°C</div>
+      </div>
+      <p style="margin-bottom: 2rem;">Zarezerwuj swój pobyt i sprawdź dostępność bezpośrednio u nas.</p>
+      <a href="tel:500294296" class="btn btn-primary ombre" style="font-size: 1.25rem; padding: 1rem 2rem;">📞 500 294 296</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div data-aos="fade-up">
+          <h4 style="color: var(--text-main); margin-bottom: 1rem;">Domki Mazury</h4>
+          <p style="color: var(--text-muted);">Bogaczewo k. Giżycka<br>Telefon: <a href="tel:500294296" style="color: var(--primary-color);">500 294 296</a><br>Email: domkimazury@interia.pl</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h4>Nawigacja</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" data-i18n="nav-home">Strona Główna</a></li>
+            <li><a href="domki.html" data-i18n="nav-cottages">Domki</a></li>
+            <li><a href="sauna-balia.html" data-i18n="nav-spa">Sauna & Balia</a></li>
+            <li><a href="cennik.html" data-i18n="nav-prices">Cennik</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Domki Mazury (domkimazury-24.pl). Wszelkie prawa zastrzeżone.</div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="translations.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
