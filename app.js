@@ -30,23 +30,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Theme Switcher (Dark / Light Mode)
   const savedTheme = localStorage.getItem('mazury-theme');
-  const themeBtn = document.querySelector('.theme-btn');
+  const themeBtns = document.querySelectorAll('.theme-btn');
   
+  const updateThemeUI = (isDark) => {
+    if (isDark) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+    themeBtns.forEach(btn => {
+      btn.textContent = isDark ? '☀️' : '🌙';
+    });
+  };
+
   if (savedTheme === 'dark') {
-    document.body.classList.add('dark-theme');
-    if (themeBtn) themeBtn.textContent = '☀️';
+    updateThemeUI(true);
   } else {
-    if (themeBtn) themeBtn.textContent = '🌙';
+    updateThemeUI(false);
   }
 
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      const isDark = document.body.classList.contains('dark-theme');
-      localStorage.setItem('mazury-theme', isDark ? 'dark' : 'light');
-      themeBtn.textContent = isDark ? '☀️' : '🌙';
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isCurrentlyDark = document.body.classList.contains('dark-theme');
+      const newDarkState = !isCurrentlyDark;
+      localStorage.setItem('mazury-theme', newDarkState ? 'dark' : 'light');
+      updateThemeUI(newDarkState);
     });
-  }
+  });
 
   // 3. Multi-Language Switcher
   const savedLang = localStorage.getItem('mazury-lang') || 'pl';
