@@ -10,15 +10,15 @@
 </head>
 <body>
 
-  <!-- Sticky Glassmorphism Header -->
-  <header class="header">
-    <div class="container header-container">
+  <!-- Floating Cloud Glassmorphism Navigation Dock -->
+  <div class="header-wrapper">
+    <header class="header-cloud">
       <a href="#" class="brand">
         <img src="assets/logo.png" alt="Domki Mazury Logo" class="brand-logo" style="filter: invert(1);">
         <div>Domki <span class="gradient-text">Mazury 24</span></div>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Nav Links -->
       <ul class="nav-desktop">
         <li><a href="#home" class="nav-link active" data-i18n="nav-home">Strona Główna</a></li>
         <li><a href="#domki" class="nav-link" data-i18n="nav-cottages">Domki</a></li>
@@ -30,7 +30,6 @@
       </ul>
 
       <div class="header-actions">
-        <!-- Multi-language & Theme -->
         <div class="lang-switch pc-only">
           <button class="lang-btn active" data-lang="pl">🇵🇱</button>
           <button class="lang-btn" data-lang="en">🇬🇧</button>
@@ -39,12 +38,12 @@
         
         <button class="theme-btn" aria-label="Przełącz motyw">🌙</button>
         
-        <a href="#cennik" class="btn btn-primary pc-only" data-i18n="btn-book">Rezerwuj Pobyt</a>
+        <a href="#cennik" class="btn btn-primary pc-only" data-i18n="btn-book">Rezerwuj</a>
 
         <button class="menu-toggle" aria-label="Menu Mobile">☰</button>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <!-- Mobile Drawer Menu -->
   <nav class="mobile-nav-overlay">
@@ -58,7 +57,7 @@
       <li><a href="#kontakt" data-i18n="nav-contact">Kontakt</a></li>
     </ul>
 
-    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
       <div class="lang-switch">
         <button class="lang-btn active" data-lang="pl">🇵🇱 PL</button>
         <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
@@ -66,8 +65,8 @@
       </div>
     </div>
 
-    <div style="margin-top: auto; padding-top: 2rem;">
-      <a href="tel:500294296" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">📞 500 294 296</a>
+    <div style="margin-top: auto; padding-top: 1.5rem;">
+      <a href="tel:500294296" class="btn btn-primary" style="width: 100%;">📞 500 294 296</a>
     </div>
   </nav>
 
@@ -105,28 +104,28 @@
   </section>
 
   <!-- Live Weather Bar & At-a-Glance Highlights -->
-  <section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
+  <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
     <div class="container">
-      <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
-        <div style="display: flex; align-items: center; gap: 1.5rem;">
-          <div id="weather-icon" style="font-size: 3rem;">☀️</div>
+      <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 1.25rem;">
+          <div id="weather-icon" style="font-size: 2.5rem;">☀️</div>
           <div>
-            <div style="font-size: 0.9rem; color: var(--text-muted);">Pogoda dzisiaj w Bogaczewie:</div>
-            <div id="weather-temp" style="font-size: 2rem; font-weight: 800; color: var(--primary);">22°C</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Pogoda dzisiaj w Bogaczewie:</div>
+            <div id="weather-temp" style="font-size: 1.8rem; font-weight: 800; color: var(--primary);">22°C</div>
           </div>
         </div>
 
         <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
           <div>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent);">1000m</div>
+            <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent);">1000m</div>
             <div style="font-size: 0.85rem; color: var(--text-muted);">Plaża i Jezioro Boczne</div>
           </div>
           <div>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-gold);">2 Domki</div>
+            <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-gold);">2 Domki</div>
             <div style="font-size: 0.85rem; color: var(--text-muted);">Sosnowy i Świerkowy</div>
           </div>
           <div>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">100%</div>
+            <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary);">100%</div>
             <div style="font-size: 0.85rem; color: var(--text-muted);">Prywatność i Komfort</div>
           </div>
         </div>
@@ -176,7 +175,7 @@
 
       <div class="cottage-card">
         <div class="cottage-gallery">
-          <img src="assets/photos_webp/cottage_ext_1.webp" alt="Domek Z zewnątrz" class="cottage-img-main lightbox-trigger">
+          <img src="assets/photos_webp/cottage_ext_1.webp" alt="Domek Sosnowy" class="cottage-img-main lightbox-trigger" loading="lazy">
         </div>
         <div class="cottage-content">
           <h3>Domek Sosnowy (Dla 4 Osoby)</h3>
@@ -216,7 +215,7 @@
           <a href="#cennik" class="btn btn-primary">Zarezerwuj Domek Świerkowy</a>
         </div>
         <div class="cottage-gallery">
-          <img src="assets/photos_webp/cottage_ext_2.webp" alt="Domek Świerkowy" class="cottage-img-main lightbox-trigger">
+          <img src="assets/photos_webp/cottage_ext_2.webp" alt="Domek Świerkowy" class="cottage-img-main lightbox-trigger" loading="lazy">
         </div>
       </div>
     </div>
@@ -247,7 +246,7 @@
           <div class="spa-body">
             <h3>Balia Ogrodowa z Hydromasażem</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
-              Podgrzewana balia ogrodowa (jacuzzi) z systemem napowietrzania i klimatycznym podświetleniem LED Nocą.
+              Podgrzewana balia ogrodowa (jacuzzi) z systemem napowietrzania i klimatycznym podświetleniem LED nocą.
             </p>
           </div>
         </div>
@@ -337,7 +336,7 @@
   </section>
 
   <!-- Gallery Lightbox Grid Section -->
-  <section id="galeria" class="section bg-alt">
+  <section id="galeria" class="section">
     <div class="container">
       <div class="section-header">
         <div class="badge badge-primary">Fotogaleria</div>
@@ -391,7 +390,7 @@
   </section>
 
   <!-- Contact & Footer Section -->
-  <section id="kontakt" class="section bg-alt">
+  <section id="kontakt" class="section">
     <div class="container">
       <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
         <div>
@@ -399,7 +398,7 @@
           <h2>Skontaktuj się z Nami</h2>
           <p style="margin-bottom: 2rem;">Chętnie odpowiemy na wszystkie pytania dotyczące dostępności i szczegółów przyjazdu.</p>
 
-          <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 1.1rem;">
+          <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 1.05rem;">
             <div>📍 <strong>Lokalizacja:</strong> Bogaczewo k. Giżycka</div>
             <div>📞 <strong>Telefon:</strong> <a href="tel:500294296" style="color: var(--primary); font-weight: 700;">500 294 296</a></div>
             <div>✉️ <strong>E-mail:</strong> domkimazury@interia.pl</div>
@@ -409,7 +408,7 @@
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: var(--primary-glow); padding: 2rem; border-radius: var(--radius-md);">
           <h3>Masz Pytania? Zadzwoń Teraz!</h3>
           <p style="margin: 1rem 0 2rem;">Odpowiadamy szybko i sprawnie na każde zapytanie telefoniczne.</p>
-          <a href="tel:500294296" class="btn btn-gold" style="font-size: 1.25rem;">📞 500 294 296</a>
+          <a href="tel:500294296" class="btn btn-gold" style="font-size: 1.2rem;">📞 500 294 296</a>
         </div>
       </div>
 
@@ -421,7 +420,7 @@
 
   <!-- Mobile Fixed Quick Call Bar -->
   <div class="mobile-cta-bar">
-    <a href="tel:500294296" class="btn btn-gold" style="flex: 1;">📞 Zadzwoń 500 294 296</a>
+    <a href="tel:500294296" class="btn btn-gold" style="flex: 1;">📞 500 294 296</a>
     <a href="#cennik" class="btn btn-primary" style="flex: 1;">Rezerwuj</a>
   </div>
 
