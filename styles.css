@@ -216,7 +216,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); }
 }
 
 /* ==========================================================================
-   FLOATING CLOUD DOCK HEADER & LARGER WHITE LOGO STYLING
+   FLOATING CLOUD DOCK HEADER & DEDICATED PURE WHITE LOGO FOR DARK MODE
    ========================================================================== */
 .header-wrapper {
   position: fixed;
@@ -251,20 +251,42 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); }
   font-weight: 800;
   letter-spacing: -0.03em;
   flex-shrink: 0;
+  color: var(--text-primary);
 }
 
-/* LARGER LOGO WITH PURE WHITE FILTER IN DARK THEME */
 .brand-logo {
   height: 48px;
   width: auto;
   max-width: 60px;
   object-fit: contain;
-  filter: brightness(0); /* Black in light theme for contrast on white header */
-  transition: filter var(--transition-fast), height var(--transition-fast);
+  transition: height var(--transition-fast);
 }
 
-body.dark-theme .brand-logo {
-  filter: invert(1) brightness(2) !important; /* Pure crisp white in dark theme */
+.brand-logo.logo-dark {
+  display: none !important;
+}
+
+.brand-logo.logo-light {
+  display: block !important;
+}
+
+/* DARK MODE LOGO SWITCH & TEXT BRIGHTENING */
+body.dark-theme .brand-logo.logo-light {
+  display: none !important;
+}
+
+body.dark-theme .brand-logo.logo-dark {
+  display: block !important;
+}
+
+body.dark-theme .brand {
+  color: #ffffff !important;
+}
+
+body.dark-theme .brand .gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Desktop Navigation */
@@ -363,7 +385,7 @@ body.dark-theme .theme-btn {
     display: block !important;
   }
   .brand-logo {
-    height: 38px;
+    height: 40px;
   }
 }
 
